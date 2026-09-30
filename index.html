@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammad Daliriazar | Data and AI</title>
+<meta name="description" content="Portfolio of Mohammad Daliriazar, a Computer Science (AI) student in London: data analytics, churn and retention projects using Python, SQL and Power BI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f4f7;--surface:#fff;--ink:#1b2430;--muted:#5a6675;--line:#d5dbe3;--accent:#2d4fe0;--accent-ink:#fff;--bar:#c9d1dc;
+--head:"Bricolage Grotesque","Trebuchet MS",sans-serif;--body:"IBM Plex Sans","Segoe UI",Arial,sans-serif}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161d;--surface:#1a202a;--ink:#e8ecf2;--muted:#9aa5b5;--line:#2c3543;--accent:#7f9bff;--accent-ink:#12161d;--bar:#3a4557}}
+:root[data-theme="dark"]{--bg:#12161d;--surface:#1a202a;--ink:#e8ecf2;--muted:#9aa5b5;--line:#2c3543;--accent:#7f9bff;--accent-ink:#12161d;--bar:#3a4557}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:var(--accent);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+header.nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:3.5rem;flex-wrap:wrap}
+.brand{font:700 1.05rem var(--head);color:var(--ink);text-decoration:none}
+nav{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:.25rem .8rem;font:inherit;font-size:.85rem;cursor:pointer}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+.hero{padding:4.5rem 0 3.5rem;display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:center}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);letter-spacing:-.02em;font-weight:700}
+.hero p.lead{font-size:1.2rem;max-width:34rem;margin:1.25rem 0 1.75rem;color:var(--muted)}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.65rem 1.2rem;border-radius:6px;text-decoration:none;font-weight:500;border:1px solid var(--ink);color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{filter:brightness(1.08)}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.5rem}
+.chart h2{font-size:1.05rem;margin-bottom:.25rem}
+.chart p{margin:0 0 1.25rem;color:var(--muted);font-size:.9rem}
+.row{display:grid;grid-template-columns:5.5rem 1fr;align-items:center;gap:.75rem;margin:.6rem 0}
+.row span.n{font-size:.95rem}
+.track{background:var(--bar);border-radius:4px;height:2rem;position:relative;overflow:hidden}
+.fill{height:100%;background:var(--accent);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:.6rem;color:var(--accent-ink);font-weight:500;font-size:.9rem;transform-origin:left;animation:grow 1s .2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes grow{from{transform:scaleX(0)}}
+@media(prefers-reduced-motion:reduce){.fill{animation:none}html{scroll-behavior:auto}}
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:1.75rem}
+.project{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:0 0 2.5rem 1.5rem;border-left:4px solid var(--accent);margin-bottom:2.5rem}
+.project.soon{border-left-color:var(--line);grid-template-columns:1fr}
+.project h3{font-size:1.5rem;margin-bottom:.5rem}
+.project p{margin:.5rem 0}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:.75rem 0;padding:0;list-style:none}
+.tags li{font-size:.85rem;border:1px solid var(--line);background:var(--surface);border-radius:4px;padding:.1rem .55rem}
+.project img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);display:block}
+.links{display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:.75rem}
+.two{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem}
+.skills dt{font:700 1rem var(--head);margin-top:1rem}
+.skills dd{margin:.15rem 0 0;color:var(--muted)}
+.certs{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.certs li{display:grid;grid-template-columns:1fr auto;gap:.25rem 1.5rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.certs strong{font-weight:500}
+.certs .meta{color:var(--muted);font-size:.92rem}
+.certs a{align-self:center;grid-row:1/3;grid-column:2}
+footer{padding:2rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.contact a.big{font:700 clamp(1.4rem,4vw,2.2rem) var(--head);word-break:break-word}
+.more{list-style:none;margin:1rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem 2rem}.more h4{font:700 1.05rem var(--head);margin:0}.more p{margin:.2rem 0;color:var(--muted);font-size:.95rem}
+@media(max-width:52rem){.more{grid-template-columns:1fr}.hero,.project,.two{grid-template-columns:1fr}.hero{padding-top:2.5rem;gap:2rem}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top">Mohammad Daliriazar</a>
+  <nav aria-label="Main">
+    <a href="#projects">Projects</a><a href="#about">About</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a>
+    <button id="theme" type="button" aria-label="Switch colour theme">Theme</button>
+  </nav>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+  <div>
+    <h1>I find out why customers leave.</h1>
+    <p class="lead">Hi, I'm Mohammad Daliriazar, a Computer Science (Artificial Intelligence) student in London. I turn data into clear decisions using Python, SQL and Power BI.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="Mohammad-Daliriazar-CV.pdf">Download CV</a>
+    </div>
+  </div>
+  <figure class="chart" style="margin:0" aria-label="Bar chart of churn rate by subscription plan">
+    <h2>Churn rate by plan</h2>
+    <p>From my Netflix customer analytics project (50,000 customers)</p>
+    <div class="row"><span class="n">Basic</span><div class="track"><div class="fill" style="width:100%">25.2%</div></div></div>
+    <div class="row"><span class="n">Standard</span><div class="track"><div class="fill" style="width:59.3%">15.0%</div></div></div>
+    <div class="row"><span class="n">Premium</span><div class="track"><div class="fill" style="width:30%">7.6%</div></div></div>
+  </figure>
+</div>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+
+  <article class="project">
+    <div>
+      <h3>Netflix customer analytics: churn and retention</h3>
+      <p><strong>Problem:</strong> Which customers cancel, and what separates them from those who stay?</p>
+      <p><strong>Finding:</strong> Basic subscribers churn at 25.2%, more than 3 times the Premium rate (7.6%). Cancelled customers also watch less (227 vs 262 minutes per week).</p>
+      <p><strong>Action:</strong> Target Basic subscribers with retention offers and use low weekly watch time as an early-warning signal.</p>
+      <ul class="tags"><li>Python</li><li>Pandas</li><li>SQL</li><li>Power BI</li></ul>
+      <div class="links">
+        <a href="https://github.com/mohammad-daliri/Netflix-customer-analytics">GitHub repository</a>
+        <a href="netflix_customer_analytics.pptx">Slide deck</a>
+      </div>
+    </div>
+    <a href="images/dashboard_overview.png"><img src="images/dashboard_overview.png" alt="Power BI dashboard showing churn rate by plan, region and engagement" loading="lazy"></a>
+  </article>
+
+  <article class="project">
+    <div>
+      <h3>UK house prices, 1968 to 2025</h3>
+      <p><strong>Problem:</strong> How have UK house prices changed over time, and how do they differ by region, property type and buyer?</p>
+      <p><strong>Finding:</strong> The average UK price rose 8,062%, from £3,311 in 1968 to £270,259 in 2025. Detached homes cost 2.3 times as much as flats, and former owner-occupiers pay about 45% more than first-time buyers in England.</p>
+      <p><strong>Built:</strong> A cleaned dataset of 149,085 rows, SQL analysis with window functions in DuckDB, and a four-page Power BI dashboard on a star schema with DAX measures.</p>
+      <ul class="tags"><li>Python</li><li>SQL (DuckDB)</li><li>Power BI</li><li>DAX</li></ul>
+      <div class="links">
+        <a href="https://github.com/mohammad-daliri/uk-house-price-analysis">GitHub repository</a>
+        <a href="UK_House_Price_Project.pptx">Slide deck</a>
+      </div>
+    </div>
+    <a href="images/uk_overview.png"><img src="images/uk_overview.png" alt="Power BI dashboard showing UK house price trend and 12-month growth" loading="lazy"></a>
+  </article>
+
+  <article class="project soon">
+    <div>
+      <h3>Programming projects</h3>
+      <ul class="more">
+        <li><h4>Secure password manager</h4><p>Encrypted local vault with user login, Fernet encryption (AES with HMAC) and a strong password generator, with add, view and delete for saved credentials.</p><ul class="tags"><li>Python</li><li>SQLite</li><li>Cryptography</li></ul></li>
+        <li><h4>Binary prime finder</h4><p>Finds every prime hidden in the substrings of a binary string. I built three versions and benchmarked them; the optimised one cut the largest test from 55.7 to 19.1 seconds.</p><ul class="tags"><li>Python</li><li>Algorithms</li><li>Performance testing</li></ul></li>
+        <li><h4>Family tree handling system</h4><p>Object-oriented model of family relationships, with cousin lookup, a birthday calendar and statistics such as average age at death.</p><ul class="tags"><li>Python</li><li>OOP</li></ul></li>
+        <li><h4>Desktop file manager</h4><p>GUI for opening, copying, moving, renaming and deleting files and folders, with error handling and dialogs.</p><ul class="tags"><li>Python</li><li>Tkinter</li></ul></li>
+        <li><h4>Arcade-style Snake game</h4><p>Keyboard-controlled game with collision detection, score tracking and instant restart.</p><ul class="tags"><li>Python</li><li>Tkinter</li></ul></li>
+      </ul>
+      <p style="color:var(--muted);font-size:.95rem;margin-top:1.25rem">Also in the repository: stock analysis, London underground system, student management system, ATS resume tool and Oracle data centre monitoring.</p>
+      <div class="links"><a href="https://github.com/mohammad-daliri/my-python-projects">All Python projects on GitHub</a></div>
+    </div>
+  </article>
+</div></section>
+
+<section id="about"><div class="wrap two">
+  <div>
+    <h2>About me</h2>
+    <p>I'm studying BSc Computer Science (Artificial Intelligence) at the University of Greenwich, graduating in May 2027, with a second-year average of 72.13%. My degree gives me the programming and AI foundations, and my projects give me the analytics side: defining the business question, cleaning and validating data, exploring it, and presenting findings in a dashboard with clear recommendations.</p>
+    <p>I'm interested in roles where data and AI meet, and I'm applying for data analyst, data scientist and AI or machine learning engineer internships, placements and junior roles, as well as any other role that fits my skills. I'm fluent in English and a native Persian speaker.</p>
+  </div>
+  <dl class="skills">
+    <dt>Analysis</dt><dd>Python, Pandas, Excel, R, exploratory analysis, data cleaning</dd>
+    <dt>Databases</dt><dd>SQL (window functions, CTEs), SQLite, DuckDB</dd>
+    <dt>Visualisation</dt><dd>Power BI (DAX, data modelling), Matplotlib, Seaborn</dd>
+    <dt>Programming</dt><dd>Python, C, JavaScript, HTML, object-oriented design</dd>
+    <dt>Practice</dt><dd>KPI design, stakeholder-focused reporting, data quality checks</dd>
+  </dl>
+</div></section>
+
+<section id="certificates"><div class="wrap">
+  <h2>Certificates</h2>
+  
+  <ul class="certs">
+    <li><div><strong>Google Data Analytics Professional Certificate</strong></div><div class="meta">Google via Coursera, 9 courses, August 2026</div><a href="https://coursera.org/verify/professional-cert/PPVP2342Z55M">Verify online</a></li>
+    <li><div><strong>SQL (Intermediate) skills certification</strong></div><div class="meta">HackerRank, February 2026</div><a href="certificates/sql-intermediate-hackerrank.pdf">View certificate</a></li>
+    <li><div><strong>Power BI Essential Training</strong></div><div class="meta">LinkedIn Learning, April 2025, CPE 7.40</div><a href="certificates/power-bi-essential-training.pdf">View certificate</a></li>
+    <li><div><strong>SQL Essential Training</strong></div><div class="meta">LinkedIn Learning, April 2025, CPE 7.80</div><a href="certificates/sql-essential-training.pdf">View certificate</a></li>
+    <li><div><strong>Excel Essential Training (Microsoft 365)</strong></div><div class="meta">LinkedIn Learning, February 2026</div><a href="certificates/excel-essential-training.pdf">View certificate</a></li>
+  </ul>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <h2>Contact</h2>
+  <p>Based in London. Open to data analyst, data scientist and AI engineer internships, placements and junior roles, and other roles that match my skills.</p>
+  <p><a class="big" href="mailto:daliriazarm@gmail.com">daliriazarm@gmail.com</a></p>
+  <p><a href="https://www.linkedin.com/in/mohammad-daliriazar">LinkedIn</a> &nbsp; <a href="https://github.com/mohammad-daliri">GitHub</a></p>
+</div></section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Mohammad Daliriazar</div></footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+var b = document.getElementById('theme'), r = document.documentElement;
+b.addEventListener('click', function () {
+  var dark = r.dataset.theme ? r.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark ? 'light' : 'dark';
+});
+</script>
+</body>
+</html>
